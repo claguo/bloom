@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import WorldPage from './pages/WorldPage';
+import NavBar from './components/NavBar';
+import USAPage from './pages/USAPage';
+import { CountryProvider } from './assets/CountryContext';
+import { USAStateProvider } from './assets/StateContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <CountryProvider>
+      <USAStateProvider>
+        <Router>
+          <div className='flex bg-light-gray'>
+          <NavBar />
+          <Routes>
+            <Route path="/" exact element={<WorldPage />} />
+            <Route path="/usa" element={<USAPage />} />
+          </Routes>
+          </div>
+        </Router>
+      </USAStateProvider>
+    </CountryProvider>
+  )
 }
 
 export default App;
