@@ -2,16 +2,13 @@ import React, {useEffect, useState, useRef } from "react";
 import Globe from 'react-globe.gl';
 import { MeshBasicMaterial } from 'three';
 import useWindowDimensions from '../assets/WindowDimensions';
-import { useCountry } from '../assets/CountryContext';
 import { useUSAState } from '../assets/StateContext';
-
 import data from '../datausa3.geojson';
 import randomPointsOnPolygon from "random-points-on-polygon";
 
 function USAGlobe(props) {
   const {USAStates, setUSAStates} = useUSAState();
   const {hoverD, setHoverD} = props;
-  // const [numAborts, setNumAborts] = useState();
   const [numAbortCoords, setNumAbortCoords] = useState([]);
   const globeEl = useRef();
 
