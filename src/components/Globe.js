@@ -29,6 +29,7 @@ function Map(props) {
       .catch((error) => {
         console.error('Error loading data:', error);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const {width, height} = useWindowDimensions();

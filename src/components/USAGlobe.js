@@ -30,6 +30,7 @@ function USAGlobe(props) {
       .catch((error) => {
         console.error('Error loading data:', error);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
