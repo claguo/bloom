@@ -8,12 +8,12 @@ function USAUI(props) {
   const {hoverD, setHoverD} = props;
 
   return (
-    <div className='w-[34vw] pl-[16rem] pt-[8rem] pb-[4rem] h-[100vh] overflow-visible flex flex-col justify-between z-10'>
+    <div className='w-[34vw] pl-[12rem] pt-[8rem] pb-[4rem] h-[100vh] overflow-visible flex flex-col justify-between z-10'>
       <div>
         {hoverD ? (
-          <h1 className='text-lg font-semibold'>{hoverD.properties.NAME}</h1>
+          <h1 className='text-lg font-semibold whitespace-nowrap'>{hoverD.properties.NAME}</h1>
         ) : (
-          <h1 className='text-lg font-semibold'>United States Aggregate</h1>
+          <h1 className='text-lg font-semibold whitespace-nowrap'>United States Aggregate</h1>
         )}
         {hoverD ? (
           <>

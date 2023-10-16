@@ -8,7 +8,7 @@ function List(props) {
   const {countries} = useCountry();
 
   return (
-    <div className='mt-[4rem] mb-[2rem] overflow-scroll rounded-lg'>
+    <div className='mt-[2rem] mb-[2rem] overflow-scroll rounded-lg'>
       {props.page === 'usa' ? (
       <>
       <h1 className='py-[0.5rem] px-[1rem] bg-blue text-white font-semibold'>States List</h1>
