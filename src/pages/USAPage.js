@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import USAGlobe from "../components/USAGlobe";
-import USAUI from "../components/USAUI";
+import UIUSA from "../components/UIUSA";
 
 function USAPage() {
   const [hoverD, setHoverD] = useState();
@@ -8,7 +8,7 @@ function USAPage() {
 
   return (
     <div className='w-[94vw] flex'>
-      <USAUI hoverD={hoverD} setHoverD={setHoverD} openModal={openModal} setOpenModal={setOpenModal}/>
+      <UIUSA hoverD={hoverD} setHoverD={setHoverD} openModal={openModal} setOpenModal={setOpenModal}/>
       <USAGlobe hoverD={hoverD} setHoverD={setHoverD}/>
     </div>
   )

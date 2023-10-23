@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Globe from "../components/Globe";
-import UI from "../components/UI";
+import UIWorld from "../components/UIWorld";
 
 function Content() {
   const [openModal, setOpenModal] = useState(false);
@@ -8,7 +8,7 @@ function Content() {
 
   return (
     <div className='w-[94vw] flex'>
-      <UI openModal={openModal} setOpenModal={setOpenModal} hoverD={hoverD} setHoverD={setHoverD}/>
+      <UIWorld openModal={openModal} setOpenModal={setOpenModal} hoverD={hoverD} setHoverD={setHoverD}/>
       <Globe hoverD={hoverD} setHoverD={setHoverD} openModal={openModal}/>
     </div>
   )

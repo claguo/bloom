@@ -17,7 +17,10 @@ function NavBar() {
         {/* <Link to='/usa/abortions' className='font-normal'>abortions</Link>
         <Link to='/usa/clinics' className='font-normal'>clinics</Link> */}
       </div>
-      <Link to='/'>About</Link>
+      <a className='flex items-center gap-[0.25rem]' target='_blank' rel='noopener noreferrer' href="https://claireguo.com/repro-care">
+        <span>About</span>
+        <span className="text-[1.2rem] material-symbols-outlined">open_in_new</span>
+      </a>
     </div>
   )
 }

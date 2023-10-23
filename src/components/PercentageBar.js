@@ -1,25 +1,23 @@
 import React from "react";
 
-function OtherStats(props) {
+function PercentageBar(props) {
 
   return (
-    <div className='mt-[3rem]'>
+    <div>
       <div className='flex justify-between'>
         <h2 className='font-semibold font-mono'>{props.count.toLocaleString()}</h2>
         <h2 className=''>{props.countLabel}</h2>
       </div>
+      
       <div className='flex justify-between'>
-        {props.percent === 'n/a' ? (
+        {props.percent === '-' ? (
           <h2 className='font-semibold font-mono'>{props.percent}</h2>
         ):(
           <h2 className='font-semibold font-mono'>{props.percent}%</h2>
         )}
-        {props.page === 'usa' ? (
-          <h2 className=''>residents traveled out of state for care</h2>
-        ) : (
-          <h2 className=''>ended in abortion</h2>
-        )}
+        <h2>{props.percLabel}</h2>
       </div>
+      
       <div className='bg-blue h-[1rem] mt-[0.25rem] w-[100%] rounded-xl overflow-hidden'>
         <div className='bg-dark-blue h-[100%] rounded-xl' style={{width: `${props.percent}%`}} />
       </div>
@@ -27,4 +25,4 @@ function OtherStats(props) {
   )
 }
 
-export default OtherStats;
+export default PercentageBar;
