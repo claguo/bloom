@@ -11,14 +11,12 @@ import randomPointsOnPolygon from "random-points-on-polygon";
 function GlobeRender({ isUSA = false, active, setActive }) {
   const globeEl = useRef();
   const containerRef = useRef();
-
   const { countries, setCountries } = useCountry();
   const { statesData, setStatesData } = useStatesData();
-
   const [points, setPoints] = useState([]);
   const [containerWidth, setContainerWidth] = useState(0);
   const [hoveredCountry, setHoveredCountry] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { width } = useWindowDimensions();
   const globeWidth = containerWidth;
@@ -95,6 +93,7 @@ function GlobeRender({ isUSA = false, active, setActive }) {
         console.error("Error loading data:", error);
         setIsLoading(false);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isUSA]);
 
   useEffect(() => {
@@ -105,6 +104,7 @@ function GlobeRender({ isUSA = false, active, setActive }) {
         altitude: globeConfig.altitude,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, isUSA]);
 
   // Helper function to calculate center of coordinates
@@ -185,6 +185,7 @@ function GlobeRender({ isUSA = false, active, setActive }) {
         });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, isUSA]);
 
   // Handle country click
@@ -221,10 +222,7 @@ function GlobeRender({ isUSA = false, active, setActive }) {
       {isLoading && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-bg-neutral p-[16px]">
           <div className="h-full w-full bg-bg-green rounded-[16px] overflow-hidden">
-            <div
-              className="h-full w-full bg-element-green animate-[loading_2s_ease-in-out_forwards]"
-              // style={{ transform: "translateX(-100%)" }}
-            />
+            <div className="h-full w-full bg-element-green animate-[loading_2s_ease-in-out_forwards]" />
           </div>
         </div>
       )}
