@@ -2,19 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: 'poppins';
-  color: #0043C5;
-}
-
-p {
-  font-size: 0.75 rem;
-}
-
-.polygon-label {
+/* .polygon-label {
   color: black;
   background-color: white;
   padding: 0.75rem 1rem;
   border-radius: 4px;
   width: 6rem;
+} */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
