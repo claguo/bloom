@@ -19,7 +19,7 @@ function Page() {
   };
 
   return (
-    <div className="flex gap-[20px] h-[100vh] w-[100vw] bg-neutral-bg p-[16px]">
+    <div className="flex flex-col lg:flex-row gap-[20px] lg:h-[100vh] w-[100vw] bg-neutral-bg p-[16px]">
       {dataSource === "world" ? (
         <WorldView
           active={active}
@@ -34,7 +34,7 @@ function Page() {
         />
       )}
 
-      <div className="overflow-hidden flex flex-col gap-[40px] py-[8px] min-w-[320px] max-w-[320px] ">
+      <div className="overflow-hidden flex flex-col gap-[40px] py-[8px] lg:min-w-[320px] lg:max-w-[320px] ">
         <TextStack title="ABOUT" lightMode={true}>
           <p className="text-text-default">
             This project was created using React and Globe.gl, with data sourced
